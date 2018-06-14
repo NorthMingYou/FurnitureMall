@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>管理员登录</title>
+		<link rel="icon" href="cainiao_favicon.ico" mce_href="cainiao_favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="css/basic.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+	</head>
+		
+	<body>
+		<div class="login-container">
+			<img src="img/bg.jpg"/>
+			<!--登录窗体-->
+			<div class="login-box">
+				<div class="login-title input-item">
+					<h1>管理员登录</h1>
+				</div>
+				<div class="login-adminname input-item">
+					<input onclick="heightLightBorder(this)" onblur="resetBorder(this)" type="text" name="adminname" id="adminname" placeholder="管理员账号" />
+				</div>
+				<div class="login-password input-item">
+					<input onclick="heightLightBorder(this)" onblur="resetBorder(this)" type="password" name="password" id="password" placeholder="管理员密码" />
+				</div>
+				<div class="login-forget ">
+					<a id="forget" class="input-submit" href="forget-password.html">忘记密码</a>
+				</div>
+				<div class="login-submit input-item">
+					<a id="login-btn" class="input-submit" href="index.html">登录</a>
+				</div>
+				<div class="login-tip input-item">
+					<!-- 登录信息提示 -->
+					<p id="login-tip"></p>
+				</div>		
+			</div>
+		</div>
+		<div class="info-copyright">
+			<p>Design by A TEAM OF CAINIAO 菜鸟家具商城</p>
+			<p>Copyright &copy; 菜鸟A队 2018</p>
+		</div>
+	</body>
+
+</html>

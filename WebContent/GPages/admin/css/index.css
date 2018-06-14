@@ -1,0 +1,99 @@
+@charset "utf-8";  
+
+
+/*全部页面的大小*/
+
+.input-item{
+	height: 64px;
+	line-height: 64px;
+	
+}
+
+.login-container {
+	position: relative;
+}
+.login-container img {
+	width: 100%;
+	height: auto;
+}
+.login-container .login-box {
+	position: absolute;
+	width: 340px;
+	height: 320px;
+	background-color: #fff;
+	padding: 20px;
+	top: 50%;
+	left: 50%;
+	margin-left: -190px;
+	margin-top: -170px;
+	border-radius: 4px;
+}
+/*.login-box {
+	background: #fff url(../img/icon.png) no-repeat;
+	background-size:50% 50%;
+	-moz-background-size:50% 50%;
+	background-position: 50% -80%;
+}*/
+.login-box, .info-copyright{
+	text-align: center;
+}
+.login-title h1 {
+	font-size: 20px;
+	color: #1d1951;
+	
+}
+.login-box input{
+	border: 1px solid #ddd;
+	height: 21px;
+	width: 280px;
+	padding: 5px;
+	border-radius: 4px;
+
+	color: #333;
+	font-size: 14px;
+	font-weight: 600;
+	
+	
+}
+.login-forget {
+	text-align: right;
+	padding-bottom: 20px;
+
+}
+.login-forget a{
+	margin-right: 25px;
+	font-size: 14px;
+	
+}
+.login-forget a:hover{
+	color: #e4393c;
+	text-decoration: underline;
+}
+.login-submit a{
+	display: block;
+	height: 32px;
+	line-height: 32px;
+	width: 280px;
+	background-color: #4b5cc4;	
+	font-weight: 400;
+	padding: 0 5px;
+	color: #fff;
+	margin: 0 auto;
+	border-radius: 2px;
+}
+.login-submit a:hover{
+	background-color: #5e70de;
+}
+.login-submit a:active{
+	background-color: #ddd;
+}
+.login-tip{
+	color: red;
+	font-size: 12px;
+	height: 14px;
+	line-height: 14px;
+}
+.info-copyright p{
+	color: #999191;
+	font-size: 12px;
+}

@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>产品列表</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="style/adminStyle.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/public.js"></script>
+</head>
+<body>
+ <div class="wrap">
+  <div class="page-title">
+    <span class="modular fl"><i></i><em>产品列表</em></span>
+    <span class="modular fr"><a href="edit_product.html" class="pt-link-btn">+添加商品</a></span>
+  </div>
+  <div class="operate">
+   <form>
+    <input type="text" class="textBox length-long" placeholder="输入产品名称..."/>
+    <input type="button" value="查询" class="tdBtn"/>
+   </form>
+  </div>
+  <table class="list-style Interlaced">
+   <tr>
+    <th>名称</th>
+    <th>类型</th>
+    <th>风格</th>
+    <th>价格</th>
+    <th>库存</th>
+    <th>是否下架</th>
+    <th>操作</th>
+   </tr>
+   <tr>
+    <td class="td-name center">
+      <span class="ellipsis td-name block">高端大气上档次的沙发</span>
+    </td>
+    <td class="center">
+     <span>
+      <i>沙发</i>
+     </span>
+    </td>
+    <td class="center">
+     <span>
+      <i>简约</i>
+     </span>
+    </td>
+    <td class="center">
+     <span>
+      <em>589</em>
+      <i>元</i>
+     </span>
+    </td>
+    <td class="center">
+      <span>
+       <em>589</em>
+       <i>件</i>
+      </span>
+     </td>
+    <td class="center"><img src="images/no.gif"/></td>
+    <td class="center">
+     <a href="" title="查看"><img src="images/icon_view.gif"/></a>
+     <a href="edit_product.html" title="编辑"><img src="images/icon_edit.gif"/></a>
+     <a title="删除"><img src="images/icon_drop.gif"/></a>  
+    </td>
+   </tr>
+  </table>
+  <!-- BatchOperation -->
+  <div style="overflow:hidden;">
+	  <div class="turnPage center fr">
+	   <a>第一页</a>
+	   <a>1</a>
+	   <a>最后一页</a>
+	  </div>
+  </div>
+ </div>
+</body>
+</html>

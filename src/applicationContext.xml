@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx.xsd">
+	
+	
+	<!-- 自动扫描（自动注入） -->
+    <context:component-scan base-package="com.*" />
+    <!-- 引入资源文件 -->
+    <bean id="propertyConfigurer"
+        class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="classpath:jdbc.properties" />
+    </bean>
+	<!-- 配置c3p0连接池信息 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<!-- 注入属性值 -->
+		<property name="driverClass" value="${driverClassName}"></property>
+		<property name="jdbcUrl" value="${url}"></property>
+		<property name="user" value="${username}"></property>
+		<property name="password" value="${password}"></property>
+	</bean>
+	<!-- 第一步、配置事务管理器 --> 
+	<bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<!-- 注入sessionFactory -->
+		<property name="sessionFactory" ref="sessionFactory"></property>
+ 	</bean>
+	
+	<!-- 第二步，开启事务注解 -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	
+	<!-- hibernate中sessionFactory的创建交给spring管理  -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<!-- 因为在核心配置文件中，没有数据库的配置，数据库配置在spring中进行管理 ，注入dataSource-->
+		<property name="dataSource" ref="dataSource"></property>
+		<!-- 指定使用hibernate核心配置文件 -->
+		<property name="configLocations" value="classpath:hibernate.cfg.xml"></property>
+	</bean>
+	<!-- 创建HibernateTemplate对象 -->
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate5.HibernateTemplate">
+		<!-- 注入sessionFactory -->
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+    <property name="messageConverters">
+        <list>
+            <!--json视图拦截器，读取到@ResponseBody的时候去配置它-->
+            <ref bean="mappingJacksonHttpMessageConverter"/>
+        </list>
+    </property>
+	</bean>
+	<!--json转化器，它可以将结果转化-->
+	<bean id="mappingJacksonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+	    <property name="supportedMediaTypes">
+	        <list>
+	            <value>application/json;charset=UTF-8</value>
+	        </list>
+	    </property>
+	</bean>
+	
+	<context:annotation-config>
+	<Manager className="org.apache.catalina.session.PersistentManager"  debug="0"      
+		     saveOnRestart="false"      
+		     maxActiveSessions="-1"      
+		     minIdleSwap="-1"      
+		     maxIdleSwap="-1"      
+		     maxIdleBackup="-1">   
+		 <Store className="org.apache.catalina.session.FileStore"/>    
+		</Manager> 
+	</context:annotation-config>
+	
+</beans>

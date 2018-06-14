@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>产品列表</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="style/adminStyle.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+ <div class="wrap">
+  <div class="page-title">
+    <span class="modular fl"><i class="add"></i><em>编辑产品</em></span>
+    <span class="modular fr"><a href="product_list.html" class="pt-link-btn">产品列表</a></span>
+  </div>
+  <form action="product_list.html">
+  <table class="list-style">
+   <tr>
+    <td style="text-align:right;width:15%;">家具名称：</td>
+    <td><input type="text" class="textBox length-long"/></td>
+   </tr>
+   <tr>
+    <td style="text-align:right;">家具类型：</td>
+    <td>
+     <select class="textBox">
+      <option>床</option>
+      <option>沙发</option>
+      <option>椅子</option>
+      <option>桌子</option>
+     </select>
+    </td>
+   </tr>
+   <tr>
+      <td style="text-align:right;">家具风格：</td>
+      <td>
+       <select class="textBox">
+        <option>复古</option>
+        <option>欧式</option>
+        <option>简约</option>
+        <option>黑白</option>
+       </select>
+      </td>
+     </tr>
+   <tr>
+    <td style="text-align:right;">原价：</td>
+    <td>
+     <input type="text" class="textBox length-short"/>
+     <span>元</span>
+    </td>
+   </tr>
+   <tr>
+    <td style="text-align:right;">优惠价：</td>
+    <td>
+     <input type="text" class="textBox length-short"/>
+     <span>元</span>
+    </td>
+   </tr>
+   <tr>
+    <td style="text-align:right;">库存：</td>
+    <td>
+     <input type="text" class="textBox length-short"/>
+     <span>件</span>
+    </td>
+   </tr>
+   
+   <tr>
+    <td style="text-align:right;">是否显示（上下架）:</td>
+    <td>
+      <select class="textBox">
+      <option>是</option>
+      <option>否</option>
+     </select>
+    </td>
+   </tr>
+   <tr>
+    <td style="text-align:right;">家具缩图片：</td>
+    <td>
+     <input type="file" id="suoluetu" class="hide"/>
+     <label for="suoluetu" class="labelBtnAdd">+</label>
+     <img src="#" width="60" height="60" class="mlr5"/>
+    </td>
+   </tr>
+   
+   <tr>
+    <td style="text-align:right;">家具主图：</td>
+    <td>
+     <input type="file"  multiple="multiple" id="chanpinzhutu" class="hide"/>
+     <label for="chanpinzhutu" class="labelBtn2">本地上传(最多选择3张)</label>
+    </td>
+   </tr>
+   <tr>
+    <td style="text-align:right;"></td>
+    <td>
+     <img src="#" width="80" height="80"/>
+     <img src="#" width="80" height="80"/>
+     <img src="#" width="80" height="80"/>
+    </td>
+   </tr>
+   
+   <tr>
+    <td style="text-align:right;">家具详情描述：</td>
+    <td><textarea class="textarea">...这里直接调用文本编辑器...移除此处的“textarea”即可</textarea></td>
+   </tr>
+   <tr>
+    <td style="text-align:right;"></td>
+    <td><input type="submit" value="编辑完成" class="tdBtn"/></td>
+   </tr>
+  </table>
+  </form>
+ </div>
+</body>
+</html>
